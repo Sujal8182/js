@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    .main{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        background-color: antiquewhite;
+
+    }
+    .main .card{
+        width: 350px;
+        height: 550px;
+        border: 1px solid black;
+        border-radius: 23px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 5px ;
+        align-items: center;
+        background-color: lightsteelblue;
+    }
+    .main .card img{
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 23px;
+
+    }
+    .main .card button{
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 700;
+        border-radius: 22px;
+        border: none;
+
+    }
+    .main .card span{
+        font-size: 20px;
+        font-weight: 600;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-inline: 5%;
+    }
+    .main .card span,p{
+        padding-inline: 15px;
+    }
+</style>
+<body>
+    <div class="main" id="container"></div>
+</body>
+<script>
+    for(let i = 0; i < 5; i++){
+        
+        let img = ["sung.jpg","link.jpg","ichigo.jpg","gojo.jpg","ayanokoji.jpg"]
+        let name = ["Sung jin woo", "Cheng Xiaoshi","Ichigo kurasaki","Satorou Gojo","Kiyotaka Ayonokoji"]
+        let desp = ["I'm Sung Jin-Woo. I started as the weakest hunter, but after a near-death experience, I gained the ability to level up like a game character. Now, I’m one of the strongest, facing powerful enemies and uncovering dark secrets, all while protecting those I care about.","I’m Cheng Xiaoshi. I can enter photos and relive moments from the past. With my partner, Lu Guang, I use this power to help others, solve mysteries, and change things for the better, though it’s never as simple as it seems","I'm Ichigo Kurosaki. I may have started as an ordinary teenager, but after gaining the powers of a Soul Reaper, my life changed forever. Now, I fight to protect the living and the spirits, facing powerful enemies while trying to understand the true nature of my abilities.","I'm Satoru Gojo. I'm one of the strongest sorcerers in the world, with limitless power and a unique ability to manipulate space itself. I protect the world from curses and teach students at Jujutsu High, all while enjoying a bit of chaos and making sure no one forgets who's the strongest.","I'm Kiyotaka Ayanokoji. I’m a student at Tokyo Metropolitan Advanced Nurturing High School, but I prefer to stay in the shadows. I don’t get involved unless I have to. My intelligence and manipulation skills help me stay ahead, but I don’t need recognition—just results."]
+        let container = document.getElementById("container")
+        let card = document.createElement("div")
+        let cardn = document.createElement("span")
+        let cardd = document.createElement("p")
+        let cardB = document.createElement("button")
+        cardB.append("Read more")
+        cardn.append(name[i])
+        cardd.append(desp[i])
+        card.setAttribute("class","card")
+        let cardImg = document.createElement("img")
+        cardImg.setAttribute("src",img[i])
+        card.append(cardImg)
+        card.append(cardn)
+        card.append(cardd)
+        card.append(cardB)
+        container.append(card)
+    }
+</script>
+</html>
